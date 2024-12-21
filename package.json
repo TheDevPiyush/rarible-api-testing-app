@@ -9,9 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "@rarible/sdk": "^0.13.72",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "embla-carousel-react": "^8.5.1",
+    "ethers": "^6.13.4",
+    "lucide-react": "^0.469.0",
+    "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.2"
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "tslib": "2.3.1",
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "postcss": "^8",
