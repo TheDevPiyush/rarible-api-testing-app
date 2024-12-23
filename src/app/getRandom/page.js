@@ -5,11 +5,13 @@ export default function Home() {
     const [nfts, setNfts] = useState([]);
     const [size, setSize] = useState(0);
     const [loading, setLoading] = useState(false);
+
+    // ONE DEFAULT BLOCK CHAIN NETWORK
     const [chainNetwork, setchainNetwork] = useState('CELO');
 
     const fetchNFTs = async () => {
         if (size < 1) return alert("Please provide how many NFTs to fetch.");
-        const url = `https://api.rarible.org/v0.1/items/all?blockchains=${chainNetwork}&size=${size}`;
+        const url = `https://testnet-api.rarible.org/v0.1/items/all?blockchains=${chainNetwork}&size=${size}`;
         const options = {
             method: 'GET',
             headers: {
@@ -36,7 +38,7 @@ export default function Home() {
                 className="border rounded p-2 w-1/9"
                 onChange={(e) => setchainNetwork(e.target.value)}
             >
-                <option value="5IRECHAIN">5ireChain</option>
+                <option value="FIVIRE">5ireChain</option>
                 <option value="ETHEREUM">Ethereum</option>
                 <option value="POLYGON">Polygon</option>
                 <option value="CELO">Celo</option>

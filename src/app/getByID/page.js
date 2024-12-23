@@ -7,6 +7,8 @@ export default function FetchNFTById() {
     const [tokenId, setTokenId] = useState('');
     const [nftData, setNftData] = useState(null);
     const [error, setError] = useState(null);
+    
+    // ONE DEFAULT BLOCK CHAIN NETWORK
     const [chainNetwork, setchainNetwork] = useState('CELO');
 
 
@@ -16,7 +18,7 @@ export default function FetchNFTById() {
             return;
         }
         setLoading(true)
-        const url = `https://api.rarible.org/v0.1/items/${chainNetwork}:${contractAddress}:${tokenId}`;
+        const url = `https://testnet-api.rarible.org/v0.1/items/${chainNetwork}:${contractAddress}:${tokenId}`;
         const options = {
             method: 'GET',
             headers: {
@@ -53,7 +55,7 @@ export default function FetchNFTById() {
                     className="border rounded p-2 w-1/9"
                     onChange={(e) => setchainNetwork(e.target.value)}
                 >
-                    <option value="5IRECHAIN">5ireChain</option>
+                    <option value="FIVIRE">5ireChain</option>
                     <option value="ETHEREUM">Ethereum</option>
                     <option value="POLYGON">Polygon</option>
                     <option value="CELO">Celo</option>
@@ -95,7 +97,7 @@ export default function FetchNFTById() {
                 {nftData && (
                     <div className="border rounded shadow-lg p-5 mt-5 overflow-hidden col-span-full ">
                         {nftData.meta?.content && nftData.meta.content.length > 0 && (
-                            <div className='w-full text-center justify-center flex items-center'>
+                            <div className='w-[400px] h-[400px] text-center justify-center flex items-center'>
                                 <img
                                     src={nftData.meta.content[0].url}
                                     alt={nftData.meta.name || 'NFT Image'}
